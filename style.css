@@ -1,0 +1,229 @@
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #e74c3c;
+    text-shadow: 0 0 5px rgba(255, 100, 0, 0.6),
+                 0 0 10px rgba(255, 100, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .logo:hover {
+    color: #ff5722;
+    text-shadow: 0 0 8px rgba(255, 140, 0, 0.8),
+                 0 0 12px rgba(255, 80, 0, 0.6),
+                 0 0 16px rgba(255, 60, 0, 0.4);
+  }
+  .navbar-inner {
+    background-color:transparent;
+  }
+
+  .nav-link {
+    color: #aba1a1d7;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-shadow: 0px 0px 8px rgba(255, 165, 0, 0.8);
+  }
+  
+  .nav-link:hover {
+    color: #d4740ef0;
+    text-shadow: 0 0 6px rgba(255, 100, 0, 0.6),
+                 0 0 10px rgba(255, 100, 0, 0.4);
+  }
+
+form .form-control {
+    border: 1px solid #ffa94d;
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.4);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  form .form-control:focus {
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.6),
+                0 0 15px rgba(255, 140, 0, 0.4);
+    outline: none;
+  }
+  
+
+  form .btn-outline-danger {
+    border-color: #ff8800;
+    color: #ff8800;
+    box-shadow: 0 0 5px rgba(255, 136, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  form .btn-outline-danger:hover {
+    background-color: #ff8800;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 136, 0, 0.7),
+                0 0 20px rgba(255, 110, 0, 0.4);
+  }
+  .home {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    height: 100vh;
+    width: 100%;
+    text-align: left; 
+    background: url('img/back2 (1).jpg') no-repeat center center/cover; 
+    color: white;
+    padding-left: 50px; 
+    background-position: top   center;
+    flex-direction: column;
+}
+
+.home h5, 
+.home h1, 
+.home h2, 
+.home button {
+    text-align: left; 
+    font-size: larger; 
+    margin-left: 20px;
+    text-shadow: 0px 0px 10px rgba(203, 130, 21, 0.838); 
+}
+
+.home h5 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffd700;
+}
+.home h1 {
+    font-size: 56px; 
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.home h2 {
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.home button {
+   font-size: 1rem; 
+   font-weight: 700;
+   outline: none;
+   border: none;
+   background-color: black;
+   color: aliceblue;
+   padding: 18px 36px; 
+   text-transform: uppercase;
+   cursor: pointer;
+   transition: 0.3s ease;
+   margin-left: 20px; 
+}
+
+.home button:hover {
+    background: #c1470a;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 70px; 
+}
+
+.img-fluid {
+    width: 25%; 
+    height: auto;
+    max-width: 120px; 
+}
+@media (max-width: 1200px) { 
+    .img-fluid { width: 20%; }
+}
+
+@media (max-width: 992px) { 
+    .img-fluid { width: 25%; } 
+}
+
+@media (max-width: 768px) {
+    .img-fluid { width: 33%; } 
+}
+
+@media (max-width: 576px) { 
+    .img-fluid { width: 48%; }
+}
+#new {
+  padding: 40px 20px;
+  background-color: #fff;
+  border: grey;
+}
+
+#new .one {
+  padding: 40px 20px;
+  transition: transform 0.3s ease;
+}
+
+#new .one:hover {
+  transform: scale(1.02);
+}
+
+#new .img-fluid {
+  max-height: 250px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+#new .details h2 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.btn-shop {
+  padding: 10px 20px;
+  border: 1px solid #222;
+  background: transparent;
+  color: #222;
+  transition: 0.3s;
+}
+
+.btn-shop:hover {
+  background: orange;
+  color: #fff;
+  border-color: orange;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+.footer {
+  background-color: #000000; /* Shiny black */
+  color: orange;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.glowing-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: orange;
+  text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 15px orange;
+}
+
+.tagline {
+  margin-top: 10px;
+  color: orange;
+  font-size: 1.1rem;
+  text-shadow: 0 0 3px orange, 0 0 6px orange;
+}
+
+.social-heading {
+  color: orange;
+  font-size: 1.3rem;
+  text-shadow: 0 0 5px orange;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: rgb(243, 243, 243);
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 5px orange;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 10px orange, 0 0 20px orange;
+}
+
+
+
+

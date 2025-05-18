@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Basketball store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     
+    <style>
+        .product-card {
+          transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+          transform: scale(1.05);
+        }
+        .section-title {
+          background-color: #ff6f00;
+          color: rgb(206, 167, 68);
+          padding: 20px 15px;
+          border-radius: 5px;
+          margin-bottom: 20px;
+        }
+       
+        .section-header {
+          font-size: 1.8rem;
+          color: #FFA500;
+          text-decoration: underline;
+          text-align: left;
+          font-weight: bold;
+          text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+          margin-bottom: 20px;
+        }
+        .product-card {
+          transition: transform 0.3s ease;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(218, 117, 9, 0.1);
+          overflow: hidden;
+        }
+        .product-card:hover {
+          transform: scale(1.03);
+        }
+        .product-card img {
+          height: 350px;
+          object-fit: cover;
+        }
+        .section-block {
+         margin-top: 60px;
+        }
+        .btn-price {
+          background-color: #FFA500;
+          border: none;
+          color: white;
+          font-weight: bold;
+        }
+        .btn-price:hover {
+          background-color: #e69500;
+        }
+        .card {
+          background-color: rgba(255, 111, 0, 0.1); 
+          border: 1px solid rgba(255, 111, 0, 0.3);
+          backdrop-filter: blur(0.3px);
+          border-radius: 15px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+          transform: scale(1.03);        
+        }
+
+        .card-img-top {
+          background-color: rgba(255, 111, 0, 0.05); 
+          padding: 10px;
+          border-radius: 10px;
+        }
+
+        
+        .card-title {
+          color: #FFA500;
+         text-shadow: 0 0 5px rgba(255, 165, 0, 0.8), 
+               0 0 10px rgba(255, 165, 0, 0.6), 
+               0 0 20px rgba(255, 165, 0, 0.4);
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+        .glow-show {
+          color: #FFA500;
+          text-shadow: 0 0 5px rgba(255, 165, 0, 0.8), 
+               0 0 10px rgba(255, 165, 0, 0.5), 
+               0 0 15px rgba(255, 165, 0, 0.3);
+          font-weight: bold;
+        }
+        body {
+          background: url('img/back2 (1).jpg') no-repeat center center fixed;
+          background-size: cover;
+        }
+        .card:hover,
+        .card:focus-within,
+        .card.active {
+          border-color: #ff8c00; /* bold orange border */
+          box-shadow: 0 0 15px 5px rgba(255, 140, 0, 0.6);
+          transform: scale(1.03);
+        } 
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg bg-transparent py-3 fixed-top">
+      <div class="container-fluid">
+        <div class="logo text-white">SUPERHOOPS</div>
+    
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
+            <li class="nav-item"><a class="nav-link" href="review.html">Review</a></li>
+            <li class="nav-item"><a class="nav-link" href="about us.html">About us</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">0</span>
+              </a>
+            </li>
+          </ul>
+    
+          <form class="d-flex ms-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+            <button class="btn btn-outline-danger" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+      <section>
+        <div class="container pt-5">
+          <div class="section-block">
+            <h3 class="section-header">Basketball Shorts</h3>
+            <div class="row g-4">
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="Shorts/bulls.webp" class="card-img-top" alt="Shorts">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">bulls Shorts</h5>
+                    <a href="#" class="btn btn-price">P350.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="Shorts/lakers.jpeg" class="card-img-top" alt="Shorts">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">lakers Shorts</h5>
+                    <a href="#" class="btn btn-price">P300.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="Shorts/boston.webp" class="card-img-top" alt="Shorts">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Boston celtics Shorts</h5>
+                    <a href="#" class="btn btn-price">P280.50</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="Shorts/dallas.webp" class="card-img-top" alt="Shorts">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Maverick Shorts</h5>
+                    <a href="#" class="btn btn-price">P300.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="Shorts/golden.webp" class="card-img-top" alt="Shorts">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Golden state Shorts</h5>
+                    <a href="#" class="btn btn-price">P300.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="Shorts/timberwolves.webp" class="card-img-top" alt="Shorts">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Timberwolves Shorts</h5>
+                    <a href="#" class="btn btn-price">P400.00</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <div class="container pt-5">
+          <div class="section-block">
+            <h3 class="section-header">Basketball bags</h3>
+            <div class="row g-4">
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball bag/elite bag.webp" class="card-img-top" alt="Vest">
+                  <div class="card-body text-center">
+                   <h5 class="card-title">Elite bag</h5>
+                   <a href="#" class="btn btn-price">P190.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball bag/bag.webp" class="card-img-top" alt="Vest">
+                  <div class="card-body text-center">
+                   <h5 class="card-title">Rubion bag</h5>
+                   <a href="#" class="btn btn-price">P120.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball bag/b ball bag.webp" class="card-img-top" alt="Vest">
+                  <div class="card-body text-center">
+                   <h5 class="card-title">Training bag</h5>
+                   <a href="#" class="btn btn-price">P220.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball bag/ball bag 2.webp" class="card-img-top" alt="Vest">
+                  <div class="card-body text-center">
+                   <h5 class="card-title">hurricane bag</h5>
+                   <a href="#" class="btn btn-price">P160.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball bag/ball bag2.webp" class="card-img-top" alt="Vest">
+                  <div class="card-body text-center">
+                   <h5 class="card-title">Vesion bag</h5>
+                   <a href="#" class="btn btn-price">P170.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball bag/ball storage bag.webp" class="card-img-top" alt="Vest">
+                  <div class="card-body text-center">
+                   <h5 class="card-title">veterian bag</h5>
+                   <a href="#" class="btn btn-price">P250.00</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <div class="container pt-5">
+          <div class="section-block">
+           <h3 class="section-header">basketball jersey</h3>
+            <div class="row g-4">
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                 <img src="ball jersey/jersy.jpeg" class="card-img-top" alt="Kit">
+                  <div class="card-body text-center">
+                   <h5 class="card-title">Lakers jersey</h5>
+                   <a href="#" class="btn btn-price">P120.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                 <img src="ball jersey/boston.jpeg" class="card-img-top" alt="Kit">
+                  <div class="card-body text-center">
+                   <h5 class="card-title">boston Jersey</h5>
+                   <a href="#" class="btn btn-price">P130.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                 <img src="ball jersey/bulls.jpeg" class="card-img-top" alt="Kit">
+                  <div class="card-body text-center">
+                   <h5 class="card-title">bulls jersey</h5>
+                   <a href="#" class="btn btn-price">P130.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                 <img src="ball jersey/dallas.jpeg" class="card-img-top" alt="Kit">
+                  <div class="card-body text-center">
+                   <h5 class="card-title">dallas jersey</h5>
+                   <a href="#" class="btn btn-price">P150.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                 <img src="ball jersey/golden state.jpeg" class="card-img-top" alt="Kit">
+                  <div class="card-body text-center">
+                   <h5 class="card-title">Golden state jersey</h5>
+                   <a href="#" class="btn btn-price">150.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                 <img src="ball jersey/timberwolves.jpeg" class="card-img-top" alt="Kit">
+                  <div class="card-body text-center">
+                   <h5 class="card-title">Timberwolves jersey</h5>
+                   <a href="#" class="btn btn-price">P130.00</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <div class="container pt-5">
+          <div class="section-block">
+           <h3 class="section-header">Basketballs</h3>
+            <div class="row g-4">
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball balls/Tiffsan & co. basketball.avif" class="card-img-top" alt="Basketball">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Tiffsan & co Ball</h5>
+                    <a href="#" class="btn btn-price">P280.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball balls/Kuanglan fashion.avif" class="card-img-top" alt="Basketball">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Kuanglan Ball</h5>
+                    <a href="#" class="btn btn-price">P230.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball balls/sports 8s basketball.avif" class="card-img-top" alt="Basketball">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Sports 8s Ball</h5>
+                    <a href="#" class="btn btn-price">P180.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball balls/molten ball.avif" class="card-img-top" alt="Basketball">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">motlen Ball</h5>
+                    <a href="#" class="btn btn-price">P210.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball balls/Kuanglan.avif" class="card-img-top" alt="Basketball">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Kuanglan dark edition Ball</h5>
+                    <a href="#" class="btn btn-price">P300.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball balls/wilson.webp" class="card-img-top" alt="Basketball">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">wilson Ball</h5>
+                    <a href="#" class="btn btn-price">P250.00</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <div class="container pt-5">
+          <div class="section-block">
+           <h3 class="section-header">Accessories</h3>
+            <div class="row g-4">
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball accersories/guard.webp" class="card-img-top" alt="Wristbands">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Score Guard</h5>
+                    <a href="#" class="btn btn-price">P1600.00</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball accersories/gaurd practice.webp" class="card-img-top" alt="Wristbands">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Guard practice</h5>
+                    <a href="#" class="btn btn-price">P450.00</a>
+                  </div>
+                </div>
+              </div><div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="basketball accersories/ball strap.webp" class="card-img-top" alt="Wristbands">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Wristbands</h5>
+                    <a href="#" class="btn btn-price">P50.00</a>
+                  </div>
+                </div>
+              </div><div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="rims/full hoop.avif" class="card-img-top" alt="Wristbands">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Full hoop</h5>
+                    <a href="#" class="btn btn-price">P350.00</a>
+                  </div>
+                </div>
+              </div><div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="rims/training rim.webp" class="card-img-top" alt="Wristbands">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Training rim</h5>
+                    <a href="#" class="btn btn-price">P280.00</a>
+                  </div>
+                </div>
+              </div><div class="col-lg-3 col-md-4 col-12">
+                <div class="card product-card">
+                  <img src="rims/bakboard rim.avif" class="card-img-top" alt="Wristbands">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">backboard rim</h5>
+                    <a href="#" class="btn btn-price">P240.00</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <footer class="mt-5 py-5 footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-one col-lg-4 col-md-6 col-12 text-white text-center mb-4">
+              <div class="logo glowing-logo">SUPERHOOPS</div>
+              <p class="tagline">Fuel your game with SuperHoops gear.</p>
+            </div>
+
+            <div class="footer-two col-lg-4 col-md-6 col-12 text-center">
+              <h5 class="social-heading">Follow us on socials</h5>
+              <div class="social-icons">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+     
+
+    <scr   ipt src="" async defer></script> 
+  </body>
+</html> 
